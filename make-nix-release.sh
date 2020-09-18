@@ -21,4 +21,4 @@ fi
 
 $POETRY config virtualenvs.create false
 $POETRY install --no-dev
-$POETRY run python sonnet make release ${RUNTIMES[@]}
+$PYTHON sonnet make release ${RUNTIMES[@]}
