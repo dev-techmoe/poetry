@@ -11,7 +11,7 @@ test_task:
   python_script:
     - PYPACKAGE=$(printf '%s' $PYTHON | tr -d '.')
     - SQLPACKAGE=$(printf '%s-sqlite3' $PYPACKAGE | sed 's/thon//')
-    - pkg install -y git-lite bash $PYPACKAGE $SQLPACKAGE
+    - pkg install -y git-lite $PYPACKAGE $SQLPACKAGE
   pip_script:
     - $PYTHON -m ensurepip
     - $PYTHON -m pip install -U pip tox
@@ -38,7 +38,7 @@ release_task:
     matrix:
       - image_family: freebsd-12-1-snap
       - image_family: freebsd-11-3-snap
-  python_script: pkg install -y curl python3 python27 python35 python36 python37 python38
+  python_script: pkg install -y curl bash python3 python27 python35 python36 python37 python38
   pip_script:
     - python2.7 -m ensurepip
     - python3.5 -m ensurepip
