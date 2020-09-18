@@ -45,7 +45,7 @@ release_task:
     - python3.6 -m ensurepip
     - python3.7 -m ensurepip
     - python3.8 -m ensurepip
-  build_script: ./make-nix-release.sh
+  build_script: bash ./make-nix-release.sh
   upload_script: |
     for fpath in releases/*
     do
